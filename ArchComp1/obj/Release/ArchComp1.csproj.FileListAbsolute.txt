@@ -1,0 +1,6 @@
+C:\Users\tka49\Desktop\ArchComp1\ArchComp1\bin\Release\ArchComp1.exe.config
+C:\Users\tka49\Desktop\ArchComp1\ArchComp1\bin\Release\ArchComp1.exe
+C:\Users\tka49\Desktop\ArchComp1\ArchComp1\bin\Release\ArchComp1.pdb
+C:\Users\tka49\Desktop\ArchComp1\ArchComp1\obj\Release\ArchComp1.csprojResolveAssemblyReference.cache
+C:\Users\tka49\Desktop\ArchComp1\ArchComp1\obj\Release\ArchComp1.exe
+C:\Users\tka49\Desktop\ArchComp1\ArchComp1\obj\Release\ArchComp1.pdb

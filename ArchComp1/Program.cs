@@ -26,6 +26,9 @@ namespace ArchComp1
             if (args.Length == 0)
             {
                 Console.WriteLine("App doesn't have any arguments.");
+                WriteHelp();
+                Console.Write("Press Enter to exit . . . ");
+                Console.ReadLine();
             }
             else
             {
@@ -81,16 +84,19 @@ namespace ArchComp1
                     Console.ReadLine();
                     Console.WriteLine();
                 }
-                if (fileNames.Capacity > 0)
+                if (destinationPath != "")
                 {
-                    foreach (string mask in fileNames)
+                    if (fileNames.Capacity > 0)
                     {
-                        Copy(mask, isAll);
+                        foreach (string mask in fileNames)
+                        {
+                            Copy(mask, isAll);
+                        }
                     }
-                }
-                else
-                {
-                    Copy("*", isAll);
+                    else
+                    {
+                        Copy("*", isAll);
+                    }
                 }
             }
         }
