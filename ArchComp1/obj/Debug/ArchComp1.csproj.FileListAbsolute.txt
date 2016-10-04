@@ -1,0 +1,6 @@
+C:\Users\tka49\Desktop\ArchComp1\ArchComp1\bin\Debug\ArchComp1.exe.config
+C:\Users\tka49\Desktop\ArchComp1\ArchComp1\bin\Debug\ArchComp1.exe
+C:\Users\tka49\Desktop\ArchComp1\ArchComp1\bin\Debug\ArchComp1.pdb
+C:\Users\tka49\Desktop\ArchComp1\ArchComp1\obj\Debug\ArchComp1.csprojResolveAssemblyReference.cache
+C:\Users\tka49\Desktop\ArchComp1\ArchComp1\obj\Debug\ArchComp1.exe
+C:\Users\tka49\Desktop\ArchComp1\ArchComp1\obj\Debug\ArchComp1.pdb
