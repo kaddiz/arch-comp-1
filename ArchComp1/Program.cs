@@ -21,20 +21,23 @@ namespace ArchComp1
             else
             {
                 var isKey = false;
-                foreach (var a in args)
+                for (int i = 0; i < args.Length; i++)
                 {
                     isKey = false;
-                    if (a[0] == '-') isKey = true;
+                    if (args[i][0] == '-') isKey = true;
                     if (isKey)
                     {
-                        var index = Array.IndexOf(keys, a);
+                        var index = Array.IndexOf(keys, args[i]);
                         if (index > -1) indexes.Add(index);
-                        else Console.WriteLine("The key {0} not found!", a);
+                        // else Console.WriteLine("The key {0} not found!", args[i]);
                     }
                 }
             }
 
-            Console.WriteLine(indexes);
+            foreach(var i in indexes)
+            {
+                Console.WriteLine(keys[i]);
+            }
 
             Console.Read();
             return 0;
