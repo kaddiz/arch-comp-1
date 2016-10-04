@@ -46,6 +46,7 @@ namespace ArchComp1
                         if (args[i][0] != '\\')
                         {
                             string path = Path.Combine(CurrentDirectoryPath, args[i]);
+                            Console.WriteLine("path " + path);
                             if (Directory.Exists(path))
                             {
                                 if (sourcePath == "") sourcePath = path;
