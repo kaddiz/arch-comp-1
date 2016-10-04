@@ -1,2 +1,2 @@
-ArchComp1 -g -h
+ArchComp1 \23 \45 \111
 pause
