@@ -9,7 +9,7 @@ namespace ArchComp1
 {
     class Program
     {
-        private static string[] keys = { "-h", "--help" };
+        private static string[] keys = { "-h", "--help", "-a", "--all" };
 
         private static string CurrentDirectoryPath = Directory.GetCurrentDirectory();
 
@@ -18,7 +18,7 @@ namespace ArchComp1
 
         static void Main(string[] args)
         {
-            List<int> indexes = new List<int>();            
+            List<int> indexes = new List<int>();
 
             if (args.Length == 0)
             {
@@ -73,23 +73,25 @@ namespace ArchComp1
                         return;
                     }
                 }
-                if (fileName != "")
-                {
-                    Copy(fileName, false);
+                string mask = fileName;
+                if (mask == "") mask = "*";
+                bool isAll = false;
+                if (indexes.Capacity > 0)
+                {                    
+                    foreach(var i in indexes)
+                    {
+                        if (i == 2 || i == 3)
+                        {
+                            isAll = true;
+                            break;
+                        }
+                    }                    
                 }
-                else
-                {
-                    Copy("*", true);
-                }
+                Copy(mask, isAll);
             }
 
-            foreach(var i in indexes)
-            {
-                Console.WriteLine(keys[i]);
-            }
-
-            Console.WriteLine("Current Dir: {0}", CurrentDirectoryPath);
-            Console.WriteLine("SRC: {0} \nDEST: {1}", sourcePath, destinationPath);
+            //Console.WriteLine("Current Dir: {0}", CurrentDirectoryPath);
+            //Console.WriteLine("SRC: {0} \nDEST: {1}", sourcePath, destinationPath);
 
             //Console.WriteLine("Press any key to exit.");
             //Console.Read();
@@ -105,6 +107,7 @@ namespace ArchComp1
                 {
                     fileName = Path.GetFileName(s);
                     destinationFile = Path.Combine(destinationPath, fileName);
+                    Console.WriteLine("Copying file: " + fileName);
                     System.IO.File.Copy(s, destinationFile, true);
                 }
             }
@@ -114,8 +117,6 @@ namespace ArchComp1
 
                 foreach (FileInfo file in dir.EnumerateFiles(mask, SearchOption.AllDirectories))
                 {
-                    Console.WriteLine(file.FullName);
-
                     fileName = file.Name;
                     sourceFile = file.FullName;
                     var localPath = sourceFile.Replace(sourcePath, "");
@@ -126,6 +127,7 @@ namespace ArchComp1
                         Directory.CreateDirectory(destPath);
                     }
                     destinationFile = Path.Combine(destPath, fileName);
+                    Console.WriteLine("Copying file: " + fileName);
                     File.Copy(sourceFile, destinationFile, true);
                 }
             }

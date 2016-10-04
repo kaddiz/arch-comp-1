@@ -1,2 +1,2 @@
-ArchComp1 D:\ *.txt \45 
+ArchComp1 "D:\dir y" *.txt \45 -a
 pause
