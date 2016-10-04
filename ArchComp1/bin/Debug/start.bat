@@ -1,2 +1,2 @@
-ArchComp1 "D:\dir y" *.txt \45 -a
+ArchComp1 *.bmp 2.txt --all "d:\dir y" \NewDir -r -h
 pause
