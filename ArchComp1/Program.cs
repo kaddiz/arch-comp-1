@@ -43,20 +43,28 @@ namespace ArchComp1
                 {
                     if (args[i][0] != '-')
                     {
-                        if (args[i][0] != '\\')
+                        if (args[i][0] == '\\')
                         {
-                            string path = Path.Combine(CurrentDirectoryPath, args[i]);
-                            Console.WriteLine("path " + path);
-                            if (Directory.Exists(path))
+                            string path = CurrentDirectoryPath + args[i];
+                            if (sourcePath == "" && destinationPath == "")
                             {
-                                if (sourcePath == "") sourcePath = path;
-                                else if (destinationPath == "") destinationPath = path;
+                                sourcePath = path;
+                                destinationPath = path;
+                            }
+                            if (destinationPath == sourcePath) destinationPath = path;
+
+                            if (!Directory.Exists(sourcePath))
+                            {
+                                Console.WriteLine("Source path does not exist!");
+                                return;
                             }
                             else
                             {
-                                Console.WriteLine("Source path does not exist!");
+                                if (!Directory.Exists(destinationPath))
+                                {
+                                    Directory.CreateDirectory(destinationPath);
+                                }
                             }
-                            
                         }
                     }
                 }
@@ -70,8 +78,8 @@ namespace ArchComp1
             Console.WriteLine("Current Dir: {0}", CurrentDirectoryPath);
             Console.WriteLine("SRC: {0} \nDEST: {1}", sourcePath, destinationPath);
 
-            Console.WriteLine("Press any key to exit.");
-            Console.Read();
+            //Console.WriteLine("Press any key to exit.");
+            //Console.Read();
         }
     }
 }
