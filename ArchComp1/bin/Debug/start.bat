@@ -1,2 +1,2 @@
-ArchComp1 \23 \45 \111
+ArchComp1 D:\ *.txt \45 
 pause
